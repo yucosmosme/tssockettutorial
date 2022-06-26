@@ -1,0 +1,47 @@
+// 아래와 같이 명령 입력시 컴파일된 js파일 생성됨
+// $tsc -p src/server
+
+//tsconfig.json 파일이 있다면 해당 디렉토리가 TypeScript 프로젝트의 루트가 된다.
+//컴파일 옵션 설정
+
+// module : 자바스크립트 파일간 import 문법을 구현할 때 어떤 문법을 쓸지 정하는 곳
+// commonjs는 require 문법.
+// es2015, esnext는 import 문법을 사용
+// IE 호환성을 원하면 es5, commonjs
+// 신버전 자바스크립트만 표현 가능한 문법을 원하면 esnext
+
+{
+  "compilerOptions": {
+      "target": "ES2019", //컴파일하려는 js버전 'es3', 'es5', 'es2015', 'es2016', 'es2017','es2018', 'esnext' 가능
+      "module": "commonjs", //무슨 import 문법 쓸건지 'commonjs', 'amd', 'es2015', 'esnext'
+      "outDir": "../../dist/server", //출력경로
+      "sourceMap": true, //원본 .ts 파일을 특정 알고리즘으로 인코딩하여 특정 키워드로 빌드된 .js파일과 맵핑을 시켜주는 파일로 에러가 날 경우 디코딩하여 복원 가능
+      "esModuleInterop": true,
+      // "strictNullChecks": true, //null, undefined 타입에 다른게 들어오면 에러 발생시킴
+      // "noImplicitAny": true, //noImplicitAny는 any라는 타입이 의도치않게 발생할 경우 에러를 띄워주는 설정
+      // "allowJs": true, // js 파일들 ts에서 import해서 쓸 수 있는지 
+      // "checkJs": true, // 일반 js 파일에서도 에러체크 여부 
+      // "jsx": "preserve", // tsx 파일을 jsx로 어떻게 컴파일할 것인지 'preserve', 'react-native', 'react'
+      // "declaration": true, //컴파일시 .d.ts 파일도 자동으로 함께생성 (현재쓰는 모든 타입이 정의된 파일)
+      // "outFile": "./", //모든 ts파일을 js파일 하나로 컴파일해줌 (module이 none, amd, system일 때만 가능)
+      // "rootDir": "./", //루트경로 바꾸기 (js 파일 아웃풋 경로에 영향줌)
+      // "removeComments": true, //컴파일시 주석제거 
+    
+      // "strict": true, //strict 관련, noimplicit 어쩌구 관련 모드 전부 켜기
+      // "strictFunctionTypes": true, //함수파라미터 타입체크 강하게 
+      // "strictPropertyInitialization": true, //class constructor 작성시 타입체크 강하게
+      // "noImplicitThis": true, //this 키워드가 any 타입일 경우 에러내기
+      // "alwaysStrict": true, //자바스크립트 "use strict" 모드 켜기
+    
+      // "noUnusedLocals": true, //쓰지않는 지역변수 있으면 에러내기
+      // "noUnusedParameters": true, //쓰지않는 파라미터 있으면 에러내기
+      // "noImplicitReturns": true, //함수에서 return 빼먹으면 에러내기 
+      // "noFallthroughCasesInSwitch": true, //switch문 이상하면 에러내기 
+  },
+  "include": [
+    "**/*.ts"
+  ],
+  "exclude": [
+    "../../node_modules"
+  ]
+}
