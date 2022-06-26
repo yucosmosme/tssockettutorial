@@ -6,8 +6,12 @@
 
     <body>
         <script src="socket.io/socket.io.js"></script>
-        <script>
+        <!--  dev단에서 만든 ts파일 컴파일한 js 파일을 넣어줘서 소켓연결을 요청한다. -->
+        <script src="client.js"></script>
+        <!-- 여기서 직접 요청해도 된다. -->
+        <!-- <script>
             var socket = io()
-        </script>
+            // var socket = io("http://127.0.0.1:3000") 다른 서버에서 소켓io를 제공할때 
+        </script> -->
     </body>
 </html>

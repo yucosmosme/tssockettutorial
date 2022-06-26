@@ -43,4 +43,4 @@ $ npm run dev
 
 <!-- ./dist/client에 생성한 index.html와 서버를 연결시켜주기 위해 express 다운 -->
 npm install express@4
-npm install @types/express@4 --save-dev
+npm install @types/express@4
